@@ -95,9 +95,40 @@ Definition of the different states and their transition (transition functions)
 ​
 ​
 ## Task
--
+-GENERAL
+  -create all project files.
+  - create github repo.
+  -create interaction: Splash->Game ->gameOver-> Game
+
+-SPLASH
+  - build Dom.
+  - Title
+  - Game Button
+
+  -GAME OVER
+  -Build Dom
+   -Title Game Over
+​   -Display final score.
+   -Restart button.
+
+-GAME
+  -create player constructor
+  -create obstacle constructor
+  -create movement function
+  -create turn right/left function
+  -create events key up, down, left, rigth.
+  -create limits.
+  -create obstacle's position
+  -collsion phisics
+  -collision check.
+  -check parking
+  -score time countdown
+  -crash score
+
+
 ​
-​
+
+
 ## Links
 ​
 ​
@@ -113,4 +144,4 @@ URls for the project repo and deploy
 ​
 ### Slides
 URls for the project presentation (slides)
-[Link Slides.com](http://slides.com)
+[Link Slides.com] https://slides.com/josemorales-2/parked 
