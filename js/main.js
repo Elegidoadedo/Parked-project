@@ -28,7 +28,7 @@ function main(){
      gameOverScreen= buildScreen(
        `<div>
        <h1>Game Over!</h1>
-       <h2>Your Score is XX </h2>
+       <h2>Your Score is XX.</h2>
        <button class="btn-restart>Restart Game</button>
        </div>`
      )
