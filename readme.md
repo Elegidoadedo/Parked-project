@@ -37,7 +37,6 @@ PLAYER--------------------------------------------------------------------------
   -moveFoward()        -> Makes the car moves fowards.
   -moveBackward()      -> Makes the car moves Backwards.
   -draw()              -> Draw the car element into canvas.
-  -update()            -> Modify the position of our car.
 
 OBSTACLE----------------------------------------------------------------------------------------------------------------------------------------
 
