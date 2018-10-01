@@ -2,7 +2,7 @@ function Game(parent) {
   var self = this;
   self.parentElement = parent;
   self.gameElement = null
-  self.score = 1000;
+  self.score = 0;
   self._init();
   self.scoreElement.innerText = self.score;
   
@@ -10,7 +10,7 @@ function Game(parent) {
 
 Game.prototype._init = function() {
   var self = this;
-  score = 1000;
+  self.score = 1000;
   self.gameElement = buildScreen(
    ` <main class="game container">
     <header class="game__header">
@@ -29,18 +29,52 @@ Game.prototype._init = function() {
   self.canvasElement = document.querySelector('.canvas');
   self.scoreElement = self.gameElement.querySelector('.score .value');
   self.player = new Player(self.canvasElement);
-  //self.canvasElement.appendChild(self.player); 
+
+  self.handleKeyDown = function (evt) {
+    console.log(evt.key);
+    if (evt.key === "ArrowDown") {
+      console.log("arrowdown activado")
+      self.player.moveAward();
+    }
+    if (evt.key === "ArrowUp") {
+      console.log("arrowup activado")
+      self.player.moveFoward(); 
+    }
+    if (evt.key === "ArrowLeft") {
+      console.log("arrowleft activado")
+      self.player.turnLeft();
+    } 
+    if (evt.key === "ArrowRight") {
+      console.log("arrowright activado")
+      self.player.turnRigth();
+      
+    }
+    
+  }
+
+  self.startLoop();
+}
+//principal loop
+Game.prototype.loop = function(){
+ var self = this;
+  if(self.score <= 0){
+    buildGameOver();
+  };
+  //self.score--;
+  self.scoreElement.innerText = self.score;
+  document.addEventListener('keydown', self.KeyDown);
   self.player.draw();
-  
+  requestAnimationFrame(self.loop.bind(self));
+
+}
+//the first loop
+Game.prototype.startLoop = function (){
+  var self = this;
+  self.player.draw();
+//CREADOS LOS EVENTLISTENER CON LOS 4 CONTROLES
+
+document.addEventListener('keydown', self.handleKeyDown);
+  //requestAnimationFrame(self.loop);
+  self.loop();
 }
 
-//Game.prototype.startloop =
-
-
-
-
-
-score = 1000;
-if(score <= 0){
-  buildGameOver();
-};

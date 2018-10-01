@@ -31,7 +31,6 @@ function destroyGameOver(){
 function buildGame(){
   console.log("holaaa! juego llamado!");
   var game = new Game(canvas);
-
   }
 
 //destruye splash y crea game screen
@@ -49,7 +48,7 @@ function clickRestart(){
 
    function buildSplash(){
      startScreen = buildScreen(
-      `<div>
+      `<div class="back-splash">
       <h1 class="h1-splash">PARKED!</h1>
         <h2 class="h2-splash">¡APARCAO!</h2>
         <button class="btn-start">Start Game</button>
@@ -63,9 +62,10 @@ function clickRestart(){
 //buildGaneOver will creates Game Over Screen
    function buildGameOver(){
      gameOverScreen= buildScreen(
-       `<div>
+       `<div class="back-gameOver">
        <h1>Game Over!</h1>
-       <h2>Your Score is XX.</h2>
+       <h2>Your Score is </h2>
+       <span class="value"></span>
        <button class="btn-restart">Restart Game</button>
        </div>`
        );
