@@ -1,11 +1,11 @@
 function  Player(canvas){
   var self = this;
   self.ctx = canvas.getContext("2d");
-  self.posX = 0;
-  self.posY = 0;
+  self.posX = 5;
+  self.posY = 5;
   self.vel = 5;
-  self.width = 20;
-  self.heigth = 10;
+  self.width = 50;
+  self.heigth = 25;
 }
 
 function updatePos(){
@@ -20,7 +20,7 @@ Player.prototype.turnLeft = function(){
 }
 
 Player.prototype.turnRigth = function(){
-
+  var self = this;
   //PREGUNTAR, QUIZAS NO HACE FALTA SI SE BORRA TODO HACER EL CLEARRECT
   self.ctx.clearRect(0,0,self.width,self.heigth);
   //CAMBIAMOS EL PUNTO DE ANCLAJE Y ROTAMOS
@@ -32,15 +32,19 @@ function checkCollision(){
 };
 
 Player.prototype.moveFoward = function(){
+  var self = this;
   self.x+= vel;
 };
 
 Player.prototype.moveAward = function(){
+  var self = this;
   self.x -= vel;
 };
 
-function draw(){
-  self.ctx.fillRect(self.x,self.y,rectWidth,rectHeight);
+Player.prototype.draw = function(){
+  var self = this;
+  self.ctx.fillRect(self.posX,self.posY,self.width,self.heigth);
 };
+
 function update(){
 };

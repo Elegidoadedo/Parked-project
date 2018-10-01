@@ -30,7 +30,7 @@ function destroyGameOver(){
 
 function buildGame(){
   console.log("holaaa! juego llamado!");
-  var game = new Game;
+  var game = new Game(canvas);
 
   }
 
