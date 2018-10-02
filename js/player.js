@@ -1,48 +1,48 @@
 function  Player(canvas){
   var self = this;
   self.ctx = canvas.getContext("2d");
-  self.posX = 20;
-  self.posY = 50;
-  self.vel = 1;
-  self.width = 30;
-  self.heigth = 15;
+  self.posX = 10;
+  self.posY = 10;
+  self.dx = 0;
+  self.dy = 0;
+  self.vel = 5;
+  self.friction = 0.01;
+  self.impulse = 2;
+  self.width = 20;
+  self.heigth = 10;
 }
 
 
-Player.prototype.turnLeft = function(){
+Player.prototype.setDirection = function (dx, dy) {
   var self = this;
-  //PREGUNTAR, QUIZAS NO HACE FALTA SI SE BORRA TODO HACER EL CLEARRECT
-  self.ctx.clearRect(0,0,self.width,self.heigth);
-  //CAMBIAMOS EL PUNTO DE ANCLAJE Y ROTAMOS
-  self.ctx.translate(-self.width, self.heigth);
-  self.ctx.rotate((-Math.PI/4));
+
+  self.dx = dx;
+  self.dy = dy;
 }
 
-Player.prototype.turnRigth = function(){
+Player.prototype.setImpulse = function (impulse) {
   var self = this;
-  //PREGUNTAR, QUIZAS NO HACE FALTA SI SE BORRA TODO HACER EL CLEARRECT
-  //self.ctx.clearRect(0,0,self.width,self.heigth);
-  //CAMBIAMOS EL PUNTO DE ANCLAJE Y ROTAMOS
-  self.ctx.translate(self.width, self.heigth);
-  self.ctx.rotate(Math.PI/4);
-};
-
-Player.prototype.moveFoward = function(){
-  var self = this;
-  self.posX+= self.vel;
-  self.ctx.translate(self.posX,0)
-};
-
-Player.prototype.moveAward = function(){
-  var self = this;
-  self.posX -= self.vel;
-  self.ctx.translate(-self.vel,0)
-};
+  self.impulse = impulse;
+}
 
 Player.prototype.draw = function(){
   var self = this;
-  self.ctx.fillRect(self.vel,self.posY,self.width,self.heigth);
+  self.ctx.fillRect(self.posX,self.posY,self.width,self.heigth);
 };
+
+Player.prototype.update = function () {
+  var self = this;
+
+  self.posX += self.impulse * self.vel * self.dx;
+  self.posY += self.impulse * self.vel * self.dy;
+
+  if (self.impulse > 0) {
+    self.impulse -= self.friction;
+  } else {
+    self.impulse = 0;
+  }
+
+}
 
 function update(){
 };

@@ -29,7 +29,6 @@ function destroyGameOver(){
 //CREATE THINGS FUNCTIONS
 
 function buildGame(){
-  console.log("holaaa! juego llamado!");
   var game = new Game(canvas);
   }
 
