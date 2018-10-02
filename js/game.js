@@ -35,14 +35,19 @@ Game.prototype._init = function() {
 Game.prototype._startLoop = function (){
   var self = this;
 
-  self.score = 1000;
+  self.score = 100000;
   self.player = new Player(self.canvasElement);
   self.obs1 = new Obstacle(self.canvasElement, 135, 52, false);
   self.obs2 = new Obstacle(self.canvasElement, 15, 118, false);
   self.obs3 = new Obstacle(self.canvasElement, 15, 80, false);
   self.obs4 = new Obstacle(self.canvasElement, 140 , 20, false);
-  
   self.finishZone = new Obstacle(self.canvasElement, 240, 6, true);
+  self.line1 = new Line(self.canvasElement, 0, 39, 60, 3);
+  self.line1b = new Line(self.canvasElement, 60, 39, 3, 6);
+  self.line2 = new Line(self.canvasElement, 0, 70, 60, 3);
+  self.line2b = new Line(self.canvasElement, 58, 66, 3, 12);
+
+  
   self.handleKeyDown = function (evt) {
     
     if (evt.key === "ArrowDown") {
@@ -98,11 +103,15 @@ Game.prototype._updateAll = function () {
   self.scoreElement.innerText= self.score;
   self.obs1.move();
   self.obs2.grow();
+  self.score --;
 }
 
 Game.prototype._drawAll = function () {
   var self = this;
-
+  self.line1.draw();
+  self.line1b.draw();
+  self.line2.draw();
+  self.line2b.draw();
   self.obs1.draw();
   self.obs2.draw();
   self.obs3.draw();
