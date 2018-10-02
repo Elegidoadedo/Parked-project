@@ -50,7 +50,7 @@ Game.prototype._startLoop = function (){
   self.line3 = new Line(self.canvasElement, 0, 100, 60, 3);
   self.line3b = new Line(self.canvasElement, 58, 96, 3, 12);
   self.line4 = new Line(self.canvasElement, 0, 130, 60, 3);
-  self.line4b = new Line(self.canvasElement, 58, 126, 3, 12);
+  self.line4b = new Line(self.canvasElement, 58, 126, 3, 7);
   //LINEAS DE LA FILA 2
   self.line5 = new Line(self.canvasElement, 128, 10, 60, 3);
   self.line5b = new Line(self.canvasElement, 128, 10, 3, 6);
@@ -71,11 +71,13 @@ Game.prototype._startLoop = function (){
   self.line10 = new Line(self.canvasElement, 240, 5, 60, 3);
   self.line10b = new Line(self.canvasElement, 240, 5, 3, 6);
   self.line11 = new Line(self.canvasElement, 240, 40, 60, 3);
-  self.line11b = new Line(self.canvasElement, 240, 36, 3, 6);
+  self.line11b = new Line(self.canvasElement, 240, 36, 3, 12);
   self.line12 = new Line(self.canvasElement, 240, 70, 60, 3);
-  self.line12b = new Line(self.canvasElement, 240, 66, 3, 6);
-  self.line13 = new Line(self.canvasElement, 240, 70, 60, 3);
-  self.line13b = new Line(self.canvasElement, 240, 66, 3, 6);
+  self.line12b = new Line(self.canvasElement, 240, 66, 3, 12);
+  self.line13 = new Line(self.canvasElement, 240, 100, 60, 3);
+  self.line13b = new Line(self.canvasElement, 240, 96, 3, 12);
+  self.line14 = new Line(self.canvasElement, 240, 130, 60, 3);
+  self.line14b = new Line(self.canvasElement, 240, 126, 3, 6);
 
   self.handleKeyDown = function (evt) {
     
@@ -168,6 +170,8 @@ Game.prototype._drawAll = function () {
   self.line12b.draw();
   self.line13.draw();
   self.line13b.draw();
+  self.line14.draw();
+  self.line14b.draw();
   self.obs1.draw();
   self.obs2.draw();
   self.obs3.draw();
