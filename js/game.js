@@ -51,7 +51,14 @@ Game.prototype._startLoop = function (){
   self.line3b = new Line(self.canvasElement, 58, 96, 3, 12);
   self.line4 = new Line(self.canvasElement, 0, 130, 60, 3);
   self.line4b = new Line(self.canvasElement, 58, 126, 3, 12);
-  
+  //LINEAS DE LA FILA 2
+  self.line5 = new Line(self.canvasElement, 128, 36, 60, 3);
+  self.line5b = new Line(self.canvasElement, 128, 32, 3, 12);
+  self.line5c = new Line(self.canvasElement, 188, 32, 3, 12);
+
+
+
+
   self.handleKeyDown = function (evt) {
     
     if (evt.key === "ArrowDown") {
@@ -120,6 +127,9 @@ Game.prototype._drawAll = function () {
   self.line3b.draw();
   self.line4.draw();
   self.line4b.draw();
+  self.line5.draw();
+  self.line5b.draw();
+  self.line5c.draw();
   self.obs1.draw();
   self.obs2.draw();
   self.obs3.draw();
