@@ -70,6 +70,9 @@ Game.prototype._startLoop = function (){
   //LINEAS DE LA FILA 3
   self.line10 = new Line(self.canvasElement, 240, 5, 60, 3);
   self.line10b = new Line(self.canvasElement, 240, 5, 3, 6);
+  self.line11 = new Line(self.canvasElement, 240, 40, 60, 3);
+  self.line11b = new Line(self.canvasElement, 240, 36, 3, 6);
+
 
 
 
@@ -158,6 +161,8 @@ Game.prototype._drawAll = function () {
   self.line9c.draw();
   self.line10.draw();
   self.line10b.draw();
+  self.line11.draw();
+  self.line11b.draw();
   self.obs1.draw();
   self.obs2.draw();
   self.obs3.draw();
