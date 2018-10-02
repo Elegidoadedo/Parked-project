@@ -72,7 +72,8 @@ Game.prototype._startLoop = function (){
   self.line10b = new Line(self.canvasElement, 240, 5, 3, 6);
   self.line11 = new Line(self.canvasElement, 240, 40, 60, 3);
   self.line11b = new Line(self.canvasElement, 240, 36, 3, 6);
-
+  self.line11 = new Line(self.canvasElement, 240, 40, 60, 3);
+  self.line11b = new Line(self.canvasElement, 240, 36, 3, 6);
 
 
 
