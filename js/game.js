@@ -61,7 +61,12 @@ Game.prototype._startLoop = function (){
   self.line7 = new Line(self.canvasElement, 128, 66, 60, 3);
   self.line7b = new Line(self.canvasElement, 128, 62, 3, 12);
   self.line7c = new Line(self.canvasElement, 188, 62, 3, 12);
-
+  self.line8 = new Line(self.canvasElement, 128, 96, 60, 3);
+  self.line8b = new Line(self.canvasElement, 128, 92, 3, 12);
+  self.line8c = new Line(self.canvasElement, 188, 92, 3, 12);
+  self.line9 = new Line(self.canvasElement, 128, 120, 60, 3);
+  self.line9b = new Line(self.canvasElement, 128, 114, 3, 6);
+  self.line9c = new Line(self.canvasElement, 188, 114, 3, 9);
 
 
 
@@ -142,6 +147,12 @@ Game.prototype._drawAll = function () {
   self.line7.draw();
   self.line7b.draw();
   self.line7c.draw();
+  self.line8.draw();
+  self.line8b.draw();
+  self.line8c.draw();
+  self.line9.draw();
+  self.line9b.draw();
+  self.line9c.draw();
   self.obs1.draw();
   self.obs2.draw();
   self.obs3.draw();
