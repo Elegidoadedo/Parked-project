@@ -5,11 +5,11 @@ function  Player(canvas){
   self.posY = 10;
   self.dx = 0;
   self.dy = 0;
-  self.vel = 5;
-  self.friction = 0.01;
-  self.impulse = 2;
-  self.width = 20;
-  self.heigth = 10;
+  self.vel = 1.4;
+  self.friction = 0.15;
+  self.impulse = 1.3;
+  self.width = 30;
+  self.heigth = 15;
 }
 
 
@@ -27,6 +27,7 @@ Player.prototype.setImpulse = function (impulse) {
 
 Player.prototype.draw = function(){
   var self = this;
+  self.ctx.fillStyle ="blue";
   self.ctx.fillRect(self.posX,self.posY,self.width,self.heigth);
 };
 

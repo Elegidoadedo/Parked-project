@@ -37,32 +37,37 @@ Game.prototype._startLoop = function (){
 
   self.score = 1000;
   self.player = new Player(self.canvasElement);
-  self.obs1 = new Obstacle(self.canvasElement, 135, 50, false)
+  self.obs1 = new Obstacle(self.canvasElement, 135, 52, false);
+  self.obs2 = new Obstacle(self.canvasElement, 15, 118, false);
+  self.obs3 = new Obstacle(self.canvasElement, 15, 80, false);
+  self.obs4 = new Obstacle(self.canvasElement, 140 , 20, false);
+  
+  self.finishZone = new Obstacle(self.canvasElement, 240, 6, true);
   self.handleKeyDown = function (evt) {
     
     if (evt.key === "ArrowDown") {
       self.player.setDirection(0,1);
       self.player.setImpulse(2);
-      self.player.width = 25;
-      self.player.heigth = 50;
+      self.player.width = 15;
+      self.player.heigth = 30;
     }
     if (evt.key === "ArrowUp") {
       self.player.setDirection(0,-1);
       self.player.setImpulse(2);
-      self.player.width = 25;
-      self.player.heigth = 50;
+      self.player.width = 15;
+      self.player.heigth = 30;
     }
     if (evt.key === "ArrowLeft") {
       self.player.setDirection(-1,0);
       self.player.setImpulse(2);
-      self.player.width = 50;
-      self.player.heigth = 25;
+      self.player.width = 30;
+      self.player.heigth = 15;
     } 
     if (evt.key === "ArrowRight") {
       self.player.setDirection(1,0);
       self.player.setImpulse(2);
-      self.player.width = 50;
-      self.player.heigth = 25;
+      self.player.width = 30;
+      self.player.heigth = 15;
     }
   }
 
@@ -92,12 +97,17 @@ Game.prototype._updateAll = function () {
   self.player.update();
   self.scoreElement.innerText= self.score;
   self.obs1.move();
+  self.obs2.grow();
 }
 
 Game.prototype._drawAll = function () {
   var self = this;
 
-  self.player.draw();
   self.obs1.draw();
+  self.obs2.draw();
+  self.obs3.draw();
+  self.obs4.draw();
+  self.finishZone.draw();
+  self.player.draw();
 }
 

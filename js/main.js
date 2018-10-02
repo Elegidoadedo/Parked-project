@@ -48,8 +48,7 @@ function clickRestart(){
    function buildSplash(){
      startScreen = buildScreen(
       `<div class="back-splash">
-      <h1 class="h1-splash">PARKED!</h1>
-        <h2 class="h2-splash">¡APARCAO!</h2>
+        <img src="img/slash.png" class=" img-slash" alt="dyno power parking">
         <button class="btn-start">Start Game</button>
        </div>`
        );
