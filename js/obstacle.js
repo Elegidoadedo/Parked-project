@@ -11,16 +11,22 @@ function Obstacle(canvas, posX, posY, isParking ){
   self.initialWidth = self.width; 
   self.growDir = 1;
 }
+var imgFinish = new Image();
+imgFinish.src = src="img/finish-line.png";
+var imgObs = new Image();
+imgObs.src = src="img/car1-hor.png";
+
+
 Obstacle.prototype.draw = function(){
   var self = this;
   if( self.isParking === true){
     self.ctx.fillStyle= "green";
     self.width = 80;
     self.heigth = 36;
-    self.ctx.fillRect(self.posX ,self.posY,self.width,self.heigth);
+    self.ctx.drawImage(imgFinish,self.posX ,self.posY,self.width,self.heigth);
   } else{
   self.ctx.fillStyle= "red";
-  self.ctx.fillRect(self.posX ,self.posY,self.width,self.heigth);
+  self.ctx.drawImage(imgObs,self.posX ,self.posY,self.width,self.heigth);
   }
 };
 

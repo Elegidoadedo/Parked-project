@@ -12,6 +12,9 @@ function  Player(canvas){
   self.heigth = 15;
 }
 
+var imgPlayer = new Image
+imgPlayer.src = src="img/player-rigth.png"
+
 
 Player.prototype.setDirection = function (dx, dy) {
   var self = this;
@@ -28,7 +31,7 @@ Player.prototype.setImpulse = function (impulse) {
 Player.prototype.draw = function(){
   var self = this;
   self.ctx.fillStyle ="blue";
-  self.ctx.fillRect(self.posX,self.posY,self.width,self.heigth);
+  self.ctx.drawImage(imgPlayer,self.posX,self.posY,self.width,self.heigth);
 };
 
 Player.prototype.update = function () {
