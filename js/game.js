@@ -39,13 +39,16 @@ Game.prototype._startLoop = function (){
   self.score = 200,
   self._timeDown();
   self.player = new Player(self.canvasElement);
-  self.obs1 = new Obstacle(self.canvasElement, 135, 52, false);
+  self.obs1 = new Obstacle(self.canvasElement, 135, 42, false);
   self.cars.push(self.obs1);
   self.obs2 = new Obstacle(self.canvasElement, 11, 108, false);
+  self.obs2 .carts = true;
   self.cars.push(self.obs2);
-  self.obs3 = new Obstacle(self.canvasElement, 11, 80, false);
+  self.obs5 = new Obstacle(self.canvasElement, 11, 42, false);
+  self.cars.push(self.obs5);
+  self.obs3 = new Obstacle(self.canvasElement, 11, 75, false);
   self.cars.push(self.obs3);
-  self.obs4 = new Obstacle(self.canvasElement, 140 , 20, false);
+  self.obs4 = new Obstacle(self.canvasElement, 140 , 15, false);
   self.cars.push(self.obs4);
   self.finishZone = new Obstacle(self.canvasElement, 240, 6, true);
   console.log(self.cars)
@@ -69,11 +72,11 @@ Game.prototype._startLoop = function (){
   self.line7b = new Line(self.canvasElement, 128, 62, 3, 12);
   self.line7c = new Line(self.canvasElement, 188, 62, 3, 12);
   self.line8 = new Line(self.canvasElement, 128, 96, 60, 3);
-  self.line8b = new Line(self.canvasElement, 128, 92, 3, 12);
-  self.line8c = new Line(self.canvasElement, 188, 92, 3, 12);
-  self.line9 = new Line(self.canvasElement, 128, 120, 60, 3);
-  self.line9b = new Line(self.canvasElement, 128, 114, 3, 6);
-  self.line9c = new Line(self.canvasElement, 188, 114, 3, 9);
+  self.line8b = new Line(self.canvasElement, 128, 92, 3, 6);
+  self.line8c = new Line(self.canvasElement, 188, 92, 3, 6);
+  // self.line9 = new Line(self.canvasElement, 128, 120, 60, 3);
+  // self.line9b = new Line(self.canvasElement, 128, 114, 3, 6);
+  // self.line9c = new Line(self.canvasElement, 188, 114, 3, 9);
   //LINEAS DE LA FILA 3
   self.line10 = new Line(self.canvasElement, 240, 5, 60, 3);
   self.line10b = new Line(self.canvasElement, 240, 5, 3, 6);
@@ -91,29 +94,29 @@ Game.prototype._startLoop = function (){
     if (evt.key === "ArrowDown") {
       self.player.setDirection(0,1);
       self.player.setImpulse(2);
-      self.player.width = 15;
-      self.player.heigth = 30;
+      self.player.width = 20;
+      self.player.heigth = 40;
       imgPlayer.src = src="img/player-down.png"
     }
     if (evt.key === "ArrowUp") {
       self.player.setDirection(0,-1);
       self.player.setImpulse(2);
-      self.player.width = 15;
-      self.player.heigth = 30;
+      self.player.width = 20;
+      self.player.heigth = 40;
       imgPlayer.src = src="img/player-up.png"
     }
     if (evt.key === "ArrowLeft") {
       self.player.setDirection(-1,0);
       self.player.setImpulse(2);
-      self.player.width = 30;
-      self.player.heigth = 15;
+      self.player.width = 40;
+      self.player.heigth = 20;
       imgPlayer.src = src="img/player-left.png"
     } 
     if (evt.key === "ArrowRight") {
       self.player.setDirection(1,0);
       self.player.setImpulse(2);
-      self.player.width = 30;
-      self.player.heigth = 15;
+      self.player.width = 40;
+      self.player.heigth = 20;
       imgPlayer.src = src="img/player-rigth.png"
     }
   }
@@ -200,9 +203,6 @@ Game.prototype._drawAll = function () {
   self.line8.draw();
   self.line8b.draw();
   self.line8c.draw();
-  self.line9.draw();
-  self.line9b.draw();
-  self.line9c.draw();
   self.line10.draw();
   self.line10b.draw();
   self.line11.draw();
@@ -217,6 +217,7 @@ Game.prototype._drawAll = function () {
   self.obs2.draw();
   self.obs3.draw();
   self.obs4.draw();
+  self.obs5.draw();
   self.finishZone.draw();
   self.player.draw();
 }

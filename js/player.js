@@ -8,8 +8,8 @@ function  Player(canvas){
   self.vel = 1.4;
   self.friction = 0.15;
   self.impulse = 1.3;
-  self.width = 30;
-  self.heigth = 15;
+  self.width = 40;
+  self.heigth = 20;
 }
 
 var imgPlayer = new Image
