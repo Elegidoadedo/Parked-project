@@ -93,24 +93,28 @@ Game.prototype._startLoop = function (){
       self.player.setImpulse(2);
       self.player.width = 15;
       self.player.heigth = 30;
+      imgPlayer.src = src="img/player-down.png"
     }
     if (evt.key === "ArrowUp") {
       self.player.setDirection(0,-1);
       self.player.setImpulse(2);
       self.player.width = 15;
       self.player.heigth = 30;
+      imgPlayer.src = src="img/player-up.png"
     }
     if (evt.key === "ArrowLeft") {
       self.player.setDirection(-1,0);
       self.player.setImpulse(2);
       self.player.width = 30;
       self.player.heigth = 15;
+      imgPlayer.src = src="img/player-left.png"
     } 
     if (evt.key === "ArrowRight") {
       self.player.setDirection(1,0);
       self.player.setImpulse(2);
       self.player.width = 30;
       self.player.heigth = 15;
+      imgPlayer.src = src="img/player-rigth.png"
     }
   }
 
