@@ -26,10 +26,17 @@ function destroyGameOver(){
   btnRestart.removeEventListener('click', clickRestart)
   gameOverScreen.remove();
 }
+
+function destroyGame() {
+  game.destroy();
+}
 //CREATE THINGS FUNCTIONS
+var game = null;
 
 function buildGame(){
-  var game = new Game(canvas);
+  game = new Game(canvas);
+
+  game.onOver(handleGameover);
   }
 
 //destruye splash y crea game screen
@@ -42,6 +49,11 @@ function clickStart(){
 function clickRestart(){
   destroyGameOver();
   buildGame();
+}
+
+function handleGameover () {
+  destroyGame();
+  buildGameOver();
 }
 //buildSplash wil creates the splash screen
 
@@ -68,6 +80,8 @@ function clickRestart(){
        </div>`
        );
        canvas.appendChild(gameOverScreen);
+      //  scoreValue = document.querySelector(".value");
+      //  scoreValue.appendchild(score);
        btnRestart = document.querySelector(".btn-restart");
        btnRestart.addEventListener('click', clickRestart);
    };

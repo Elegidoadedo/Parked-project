@@ -3,8 +3,8 @@ function Obstacle(canvas, posX, posY, isParking ){
   self.ctx = canvas.getContext("2d");
   self.posX = posX;
   self.posY = posY;
-  self.width = 45;
-  self.heigth = 20;
+  self.width = self.ctx.canvas.width*0.15;
+  self.heigth = self.ctx.canvas.height*0.12;
   self.direction= 1;
   self.isParking = isParking;
   self.initialPosX = posX;
@@ -22,8 +22,8 @@ imgCarts.src = src="img/carts.png";
 Obstacle.prototype.draw = function(){
   var self = this;
   if( self.isParking === true){
-    self.width = 80;
-    self.heigth = 36;
+    self.width = self.ctx.canvas.width*0.19;
+    self.heigth = self.ctx.canvas.width*0.115;
     self.ctx.drawImage(imgFinish,self.posX ,self.posY,self.width,self.heigth);
   } else if(self.carts === true){
     self.ctx.drawImage(imgCarts,self.posX ,self.posY,self.width,self.heigth);
@@ -36,18 +36,18 @@ Obstacle.prototype.draw = function(){
 Obstacle.prototype.move = function(){
   var self = this;
   self.posX += self.direction;
-  if ( self.posX === (self.initialPosX +60) ){
-   self.direction = -1;
+  if ( self.posX === (self.initialPosX +(self.ctx.canvas.width*0.15)) ){
+   self.direction = -3;
   } else if( self.posX === self.initialPosX){
-    self.direction = 0.5;
+    self.direction = 2;
   }
 }
 Obstacle.prototype.grow = function(){
   var self = this;
   self.width += self.growDir;
-  if ( self.width === (self.initialWidth +60) ){
-   self.growDir = -0.5;
-  } else if( self.width === self.initialWidth){
-    self.growDir = 1;
+  if ( self.width === self.initialWidth+(self.ctx.canvas.width*0.2) ){
+   self.growDir = -3;
+  } else if( Math.round(self.width) === Math.round(self.initialWidth)){
+    self.growDir = 2;
   }
 }

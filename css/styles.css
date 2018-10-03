@@ -38,9 +38,12 @@ body {
   display: flex;
   flex-direction: column;
 }
-canvas.canvas{
-  width: 100%;
+
+.game__canvas {
   height: 100%;
+}
+
+canvas.canvas{
   background-image: url(../img/parking.png);
   background-size: cover;
 }
