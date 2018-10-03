@@ -51,15 +51,39 @@ Player.prototype.checkLimit= function() {
   }else if(self.posY < 0){
     self.posY = 0;
   }else if((self.posX + self.width) > self.ctx.canvas.width){
-    console.log("limite");
     self.posX = (self.ctx.canvas.width - self.width);
   } else if((self.posY +  self.heigth ) > self.ctx.canvas.height){
-    console.log("limite");
-    console.log(self.ctx.canvas.height);
-    console.log(self.ctx.canvas.heigth+ "2");
     self.posY = self.ctx.canvas.height - self.heigth ;
   }
 }
 
-function checkCollision(){
-};
+Player.prototype.checkCollision = function (obs) {
+  var self = this;
+
+  var crashRight = self.posX + self.width > obs.posX;
+  var crashBottom = self.posY + self.heigth> obs.posY;
+  var crashTop = self.posY < obs.posY + obs.heigth;
+  var crashLeft = self.posX < obs.posX + obs.width;
+
+  if (crashLeft && crashRight && crashTop && crashBottom) {
+    return true;
+  }
+  }
+  
+Player.prototype.collided = function (obs){
+  var self = this;
+  self.posX += (self.impulse * self.vel)/4  -self.dx*2.5;
+  self.posY += (self.impulse * self.vel)/4  -self.dy*2.5;
+}
+Player.prototype.finish = function (obs){
+  var self = this;
+  var leftSide = self.posX >= obs.posX;
+  var rightSide = self.posX + self.width <= obs.posX + obs.width;
+  var upSide = self.posY >= obs.posY;
+  var downSide = self.posY + self.heigth >= obs.posY + obs.heigth;
+  
+  if (leftSide && rightSide && upSide && downSide) {
+    return true;
+  }
+}
+

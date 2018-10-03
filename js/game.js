@@ -30,18 +30,25 @@ Game.prototype._init = function() {
   self.width = self.canvasParentElement.clientWidth;
   self.ctx = self.canvasElement.getContext('2d');
 }
-
+//TIMER ERROR
 //the first loop
 Game.prototype._startLoop = function (){
   var self = this;
-
-  self.score = 100000;
+  self.cars= [];
+  
+  self.score = 200,
+  self._timeDown();
   self.player = new Player(self.canvasElement);
   self.obs1 = new Obstacle(self.canvasElement, 135, 52, false);
+  self.cars.push(self.obs1);
   self.obs2 = new Obstacle(self.canvasElement, 11, 108, false);
+  self.cars.push(self.obs2);
   self.obs3 = new Obstacle(self.canvasElement, 11, 80, false);
+  self.cars.push(self.obs3);
   self.obs4 = new Obstacle(self.canvasElement, 140 , 20, false);
+  self.cars.push(self.obs4);
   self.finishZone = new Obstacle(self.canvasElement, 240, 6, true);
+  console.log(self.cars)
   //LINEAS DE LA FILA 1
   self.line1 = new Line(self.canvasElement, 0, 39, 60, 3);
   self.line1b = new Line(self.canvasElement, 60, 39, 3, 6);
@@ -110,6 +117,7 @@ Game.prototype._startLoop = function (){
   document.addEventListener('keydown', self.handleKeyDown);
   document.addEventListener('keyup', self.handleKeyUp);
   
+ 
   //principal loop
    function loop() {
      
@@ -123,6 +131,32 @@ Game.prototype._startLoop = function (){
   requestAnimationFrame(loop);
 }
 
+Game.prototype._timeDown = function (){
+  var self = this;
+  setInterval(function(){ self.score --}, 1000);
+}
+Game.prototype._checkAllCollision = function() {
+  var self = this;
+  self.cars.forEach(function(item, idx) {
+    if(self.player.checkCollision(item)) {
+    console.log("has chocado!")
+    self.player.collided();
+    self.score -=1 ;
+    } else {
+      return false; 
+    }
+  });
+}
+
+Game.prototype._finish = function() {
+  var self = this;
+ if( self.player.finish(finishZone)){
+   destroyGame();
+   buildGameOver()
+ }
+};
+
+
 Game.prototype._clearAll = function () {
   var self = this;
   self.ctx.clearRect(0,0, self.width, self.height)
@@ -131,11 +165,13 @@ Game.prototype._clearAll = function () {
 Game.prototype._updateAll = function () {
   var self = this;
   self.player.checkLimit();
+  self._checkAllCollision();
+  if( !self._checkAllCollision()){
   self.player.update();
+  }
   self.scoreElement.innerText= self.score;
   self.obs1.move();
   self.obs2.grow();
-  self.score --;
 }
 
 Game.prototype._drawAll = function () {
@@ -177,7 +213,7 @@ Game.prototype._drawAll = function () {
   self.obs2.draw();
   self.obs3.draw();
   self.obs4.draw();
- // self.finishZone.draw();
+  self.finishZone.draw();
   self.player.draw();
 }
 
