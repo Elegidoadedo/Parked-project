@@ -44,6 +44,7 @@ Game.prototype._startLoop = function (){
   self.score = 200,
   self._timeDown();
   self.player = new Player(self.canvasElement);
+  self.player.initialimg();
   self.obs1 = new Obstacle(self.canvasElement, self.ctx.canvas.width*0.5, self.ctx.canvas.height*0.35, false);
   self.cars.push(self.obs1);
   self.obs2 = new Obstacle(self.canvasElement, self.ctx.canvas.width*0.025, self.ctx.canvas.height*0.80, false);
@@ -99,7 +100,7 @@ Game.prototype._startLoop = function (){
     if (evt.key === "ArrowDown") {
       evt.preventDefault();
       self.player.setDirection(0,1);
-      self.player.setImpulse(2);
+      self.player.setImpulse(2.5);
       self.player.width = self.ctx.canvas.height*0.09;
       self.player.heigth = self.ctx.canvas.width*0.12;
       imgPlayer.src = src="img/player-down.png"
@@ -107,7 +108,7 @@ Game.prototype._startLoop = function (){
     if (evt.key === "ArrowUp") {
       evt.preventDefault();
       self.player.setDirection(0,-1);
-      self.player.setImpulse(2);
+      self.player.setImpulse(2.5);
       self.player.width = self.ctx.canvas.height*0.09;
       self.player.heigth = self.ctx.canvas.width*0.12;
       imgPlayer.src = src="img/player-up.png"
@@ -115,7 +116,7 @@ Game.prototype._startLoop = function (){
     if (evt.key === "ArrowLeft") {
       evt.preventDefault();
       self.player.setDirection(-1,0);
-      self.player.setImpulse(2);
+      self.player.setImpulse(2.5);
       self.player.width = self.ctx.canvas.width*0.12;
       self.player.heigth =  self.ctx.canvas.height*0.09;
       imgPlayer.src = src="img/player-left.png"
@@ -123,7 +124,7 @@ Game.prototype._startLoop = function (){
     if (evt.key === "ArrowRight") {
       evt.preventDefault();
       self.player.setDirection(1,0);
-      self.player.setImpulse(2);
+      self.player.setImpulse(2.5);
       self.player.width = self.ctx.canvas.width*0.12;
       self.player.heigth = self.ctx.canvas.height*0.09;
       imgPlayer.src = src="img/player-rigth.png"

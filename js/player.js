@@ -10,11 +10,13 @@ function  Player(canvas){
   self.impulse = 3;
   self.width = self.ctx.canvas.width*0.12;
   self.heigth = self.ctx.canvas.height*0.09;
+  self.imgPlayer = null;
 }
-
-var imgPlayer = new Image
-imgPlayer.src = src="img/player-rigth.png"
-
+Player.prototype.initialimg = function (){
+  var self = this;
+  imgPlayer = new Image;
+  imgPlayer.src = src="img/player-rigth.png";
+}
 
 Player.prototype.setDirection = function (dx, dy) {
   var self = this;
@@ -30,7 +32,6 @@ Player.prototype.setImpulse = function (impulse) {
 
 Player.prototype.draw = function(){
   var self = this;
-  self.ctx.fillStyle ="blue";
   self.ctx.drawImage(imgPlayer,self.posX,self.posY,self.width,self.heigth);
 };
 
@@ -72,12 +73,25 @@ Player.prototype.checkCollision = function (obs) {
     return true;
   }
   }
-  
+  // Player.prototype.collided = function (obs){
+  //   var self = this;
+  //   self.posX -= self.impulse * self.vel + self.dx;
+  //   self.posY -= self.impulse * self.vel + self.dy;
+  // }
+
 Player.prototype.collided = function (obs){
   var self = this;
-  self.posX -= self.impulse * self.vel + self.dx;
-  self.posY -= self.impulse * self.vel + self.dy;
+  if(imgPlayer.src = src="img/player-rigth.png"){
+    self.posX -= self.impulse+20 ;
+  } else if(imgPlayer.src = src="img/player-left.png"){
+    self.posX -= self.impulse*20 ;
+ } else if(imgPlayer.src = src="img/player-up.png"){
+    self.posY += (self.impulse * self.vel)/2 + (self.dy * -1);
+  } else if( imgPlayer.src = src="img/player-up.png"){
+    self.posY += (self.impulse * self.vel)/2 + (self.dy * -1);
+  }
 }
+
 Player.prototype.finish = function (obs){
   var self = this;
   var leftSide = self.posX >= obs.posX;
