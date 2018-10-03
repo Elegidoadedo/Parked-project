@@ -130,6 +130,7 @@ Game.prototype._clearAll = function () {
 
 Game.prototype._updateAll = function () {
   var self = this;
+  self.player.checkLimit();
   self.player.update();
   self.scoreElement.innerText= self.score;
   self.obs1.move();

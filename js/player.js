@@ -44,12 +44,22 @@ Player.prototype.update = function () {
   }
 
 }
-
-function update(){
-};
-
-function updatePos(){
-};
+Player.prototype.checkLimit= function() {
+  var self = this;
+  if(self.posX < 0 ){
+    self.posX = 0;
+  }else if(self.posY < 0){
+    self.posY = 0;
+  }else if((self.posX + self.width) > self.ctx.canvas.width){
+    console.log("limite");
+    self.posX = (self.ctx.canvas.width - self.width);
+  } else if((self.posY +  self.heigth ) > self.ctx.canvas.height){
+    console.log("limite");
+    console.log(self.ctx.canvas.height);
+    console.log(self.ctx.canvas.heigth+ "2");
+    self.posY = self.ctx.canvas.height - self.heigth ;
+  }
+}
 
 function checkCollision(){
 };
