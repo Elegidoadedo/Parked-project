@@ -45,7 +45,7 @@ Game.prototype._startLoop = function (){
   self._timeDown();
   self.player = new Player(self.canvasElement);
   self.player.initialimg();
-  self.obs1 = new Obstacle(self.canvasElement, self.ctx.canvas.width*0.5, self.ctx.canvas.height*0.35, false);
+  self.obs1 = new Obstacle(self.canvasElement, self.ctx.canvas.width*0.4, self.ctx.canvas.height*0.35, false);
   self.cars.push(self.obs1);
   self.obs2 = new Obstacle(self.canvasElement, self.ctx.canvas.width*0.025, self.ctx.canvas.height*0.80, false);
   self.obs2 .carts = true;
@@ -56,8 +56,10 @@ Game.prototype._startLoop = function (){
   self.cars.push(self.obs3);
   self.obs4 = new Obstacle(self.canvasElement, self.ctx.canvas.width*0.025, self.ctx.canvas.height*0.55, false);
   self.cars.push(self.obs4);
+  self.obs6 = new Obstacle(self.canvasElement, self.ctx.canvas.width*0.83, self.ctx.canvas.height*0.55, false);
+  self.cars.push(self.obs6);
   self.finishZone = new Obstacle(self.canvasElement, self.ctx.canvas.width*0.8, self.ctx.canvas.height*0.055, true);
-  console.log(self.cars)
+  
   //LINEAS DE LA FILA 1
   self.line1 = new Line(self.canvasElement, 0,  self.ctx.canvas.height*0.3, self.ctx.canvas.width*0.2,  self.ctx.canvas.height*0.009);
   self.line1b = new Line(self.canvasElement, self.ctx.canvas.width*0.2, self.ctx.canvas.height*0.3, self.ctx.canvas.height*0.009, self.ctx.canvas.height*0.032);
@@ -236,6 +238,7 @@ Game.prototype._drawAll = function () {
   self.obs3.draw();
   self.obs4.draw();
   self.obs5.draw();
+  self.obs6.draw();
   self.finishZone.draw();
   self.player.draw();
 }
