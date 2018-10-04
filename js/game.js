@@ -132,6 +132,10 @@ Game.prototype._startLoop = function (){
       imgPlayer.src = src="img/player-rigth.png";
       soundPlayer.play();
     }
+    if (evt.key === "c") {
+      evt.preventDefault();;
+      soundHorn.play();
+    } 
   }
 
   document.addEventListener('keydown', self.handleKeyDown);

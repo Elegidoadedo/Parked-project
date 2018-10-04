@@ -11,6 +11,7 @@ function  Player(canvas){
   self.width = self.ctx.canvas.width*0.12;
   self.heigth = self.ctx.canvas.height*0.09;
   self.imgPlayer = null;
+  
 }
 Player.prototype.initialimg = function (){
   var self = this;
@@ -19,6 +20,8 @@ Player.prototype.initialimg = function (){
 }
 var soundPlayer = new Audio;
 soundPlayer.src= src=('snd/ruum.mp3');
+var soundHorn = new Audio;
+soundHorn.src = src=('snd/horn.mp3');
 
 Player.prototype.setDirection = function (dx, dy) {
   var self = this;
