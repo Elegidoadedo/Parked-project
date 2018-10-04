@@ -73,24 +73,30 @@ Player.prototype.checkCollision = function (obs) {
     return true;
   }
   }
+ 
+Player.prototype.collided = function (obs){
+  var self = this;
+  self.posX += (self.impulse * self.vel)/4  -self.dx*2.5;
+  self.posY += (self.impulse * self.vel)/4  -self.dy*2.5;
+}
   // Player.prototype.collided = function (obs){
   //   var self = this;
   //   self.posX -= self.impulse * self.vel + self.dx;
   //   self.posY -= self.impulse * self.vel + self.dy;
   // }
 
-Player.prototype.collided = function (obs){
-  var self = this;
-  if(imgPlayer.src = src="img/player-rigth.png"){
-    self.posX -= self.impulse+20 ;
-  } else if(imgPlayer.src = src="img/player-left.png"){
-    self.posX -= self.impulse*20 ;
- } else if(imgPlayer.src = src="img/player-up.png"){
-    self.posY += (self.impulse * self.vel)/2 + (self.dy * -1);
-  } else if( imgPlayer.src = src="img/player-up.png"){
-    self.posY += (self.impulse * self.vel)/2 + (self.dy * -1);
-  }
-}
+// Player.prototype.collided = function (obs){
+//   var self = this;
+//   if(imgPlayer.src = src="img/player-rigth.png"){
+//     self.posX -= self.impulse+20 ;
+//   } else if(imgPlayer.src = src="img/player-left.png"){
+//     self.posX += self.impulse*20 ;
+//  } else if(imgPlayer.src = src="img/player-up.png"){
+//     self.posY += (self.impulse * self.vel)/2 + (self.dy * -1);
+//   } else if( imgPlayer.src = src="img/player-up.png"){
+//     self.posY += (self.impulse * self.vel)/2 + (self.dy * -1);
+//   }
+// }
 
 Player.prototype.finish = function (obs){
   var self = this;

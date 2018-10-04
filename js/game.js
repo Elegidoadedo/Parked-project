@@ -41,7 +41,7 @@ Game.prototype._startLoop = function (){
   var self = this;
   self.cars= [];
   
-  self.score = 200,
+  self.score = 1500,
   self._timeDown();
   self.player = new Player(self.canvasElement);
   self.player.initialimg();
