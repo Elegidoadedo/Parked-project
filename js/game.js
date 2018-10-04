@@ -64,11 +64,11 @@ Game.prototype._startLoop = function (){
   self.line1 = new Line(self.canvasElement, 0,  self.ctx.canvas.height*0.3, self.ctx.canvas.width*0.2,  self.ctx.canvas.height*0.009);
   self.line1b = new Line(self.canvasElement, self.ctx.canvas.width*0.2, self.ctx.canvas.height*0.3, self.ctx.canvas.height*0.009, self.ctx.canvas.height*0.032);
   self.line2 = new Line(self.canvasElement, 0, self.ctx.canvas.height*0.5, self.ctx.canvas.width*0.2,  self.ctx.canvas.height*0.009);
-  // self.line2b = new Line(self.canvasElement, 58, 66, 3, 12);
+  self.line2b = new Line(self.canvasElement, self.ctx.canvas.width*0.2, self.ctx.canvas.height*0.477, self.ctx.canvas.width*0.005, self.ctx.canvas.height*0.05);
    self.line3 = new Line(self.canvasElement, 0, self.ctx.canvas.height*0.7, self.ctx.canvas.width*0.2,  self.ctx.canvas.height*0.009);
-  // self.line3b = new Line(self.canvasElement, 58, 96, 3, 12);
+  self.line3b = new Line(self.canvasElement, self.ctx.canvas.width*0.2, self.ctx.canvas.height*0.68, self.ctx.canvas.width*0.005, self.ctx.canvas.height*0.05);
   self.line4 = new Line(self.canvasElement, 0, self.ctx.canvas.height*0.9, self.ctx.canvas.width*0.2,  self.ctx.canvas.height*0.009);
-  // self.line4b = new Line(self.canvasElement, 58, 126, 3, 7);
+  self.line4b = new Line(self.canvasElement, self.ctx.canvas.width*0.2, self.ctx.canvas.height*0.885, self.ctx.canvas.width*0.005, self.ctx.canvas.height*0.024);
   // //LINEAS DE LA FILA 2
    self.line5 = new Line(self.canvasElement, self.ctx.canvas.width*0.4, self.ctx.canvas.height*0.1, self.ctx.canvas.width*0.2,  self.ctx.canvas.height*0.009);
   // self.line5b = new Line(self.canvasElement, 128, 10, 3, 6);
@@ -206,11 +206,11 @@ Game.prototype._drawAll = function () {
   self.line1.draw();
   self.line1b.draw();
   self.line2.draw();
-  // self.line2b.draw();
+  self.line2b.draw();
   self.line3.draw();
-  // self.line3b.draw();
+  self.line3b.draw();
   self.line4.draw();
-  // self.line4b.draw();
+  self.line4b.draw();
   self.line5.draw();
   // self.line5b.draw();
   // self.line5c.draw();

@@ -81,7 +81,7 @@ function handleGameover () {
        );
        canvas.appendChild(gameOverScreen);
        var scoreElement = document.querySelector('.value');
-       scoreElement.innerText = score;
+       scoreElement.innerText = game.score;
        btnRestart = document.querySelector(".btn-restart");
        btnRestart.addEventListener('click', clickRestart);
    };

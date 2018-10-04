@@ -79,11 +79,7 @@ Player.prototype.collided = function (obs){
   self.posX += (self.impulse * self.vel)/4  -self.dx*2.5;
   self.posY += (self.impulse * self.vel)/4  -self.dy*2.5;
 }
-  // Player.prototype.collided = function (obs){
-  //   var self = this;
-  //   self.posX -= self.impulse * self.vel + self.dx;
-  //   self.posY -= self.impulse * self.vel + self.dy;
-  // }
+
 
 // Player.prototype.collided = function (obs){
 //   var self = this;
