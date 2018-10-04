@@ -88,11 +88,11 @@ Game.prototype._startLoop = function (){
   self.line11 = new Line(self.canvasElement, self.ctx.canvas.width*0.8, self.ctx.canvas.height*0.3, self.ctx.canvas.width*0.2,  self.ctx.canvas.height*0.009);
   self.line11b =  new Line(self.canvasElement, self.ctx.canvas.width*0.8, self.ctx.canvas.height*0.277, self.ctx.canvas.width*0.005, self.ctx.canvas.height*0.05);
   self.line12 = new Line(self.canvasElement, self.ctx.canvas.width*0.8, self.ctx.canvas.height*0.5, self.ctx.canvas.width*0.2,  self.ctx.canvas.height*0.009);
-  // self.line12b = new Line(self.canvasElement, 240, 66, 3, 12);
+  self.line12b =   new Line(self.canvasElement, self.ctx.canvas.width*0.8, self.ctx.canvas.height*0.477, self.ctx.canvas.width*0.005, self.ctx.canvas.height*0.05)
   self.line13 = new Line(self.canvasElement, self.ctx.canvas.width*0.8, self.ctx.canvas.height*0.7, self.ctx.canvas.width*0.2,  self.ctx.canvas.height*0.009);
-  // self.line13b = new Line(self.canvasElement, 240, 96, 3, 12);
+  self.line13b =   new Line(self.canvasElement, self.ctx.canvas.width*0.8, self.ctx.canvas.height*0.677, self.ctx.canvas.width*0.005, self.ctx.canvas.height*0.05)
   self.line14 = new Line(self.canvasElement, self.ctx.canvas.width*0.8, self.ctx.canvas.height*0.9, self.ctx.canvas.width*0.2,  self.ctx.canvas.height*0.009);
-  // self.line14b = new Line(self.canvasElement, 240, 126, 3, 6);
+  self.line14b =   new Line(self.canvasElement, self.ctx.canvas.width*0.8, self.ctx.canvas.height*0.877, self.ctx.canvas.width*0.005, self.ctx.canvas.height*0.032);
 
   self.handleKeyDown = function (evt) {
     
@@ -225,11 +225,11 @@ Game.prototype._drawAll = function () {
   self.line11.draw();
   self.line11b.draw();
   self.line12.draw();
-  // self.line12b.draw();
+  self.line12b.draw();
   self.line13.draw();
-  // self.line13b.draw();
+  self.line13b.draw();
   self.line14.draw();
-  // self.line14b.draw();
+  self.line14b.draw();
   self.obs1.draw();
   self.obs2.draw();
   self.obs3.draw();

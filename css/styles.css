@@ -38,6 +38,12 @@ body {
 .back-gameOver h2{
   font-size: 44px;
 }
+
+.value{
+  color:#64FE2E;
+  font-size: 44px;
+  padding-bottom: 5%;
+}
 .back-splash,  .back-gameOver{
   background-image: url(../img/background.png);
   background-size: cover;
