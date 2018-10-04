@@ -82,14 +82,11 @@ Game.prototype._startLoop = function (){
   self.line8 = new Line(self.canvasElement, self.ctx.canvas.width*0.4, self.ctx.canvas.height*0.7, self.ctx.canvas.width*0.2,  self.ctx.canvas.height*0.009);
   self.line8b = new Line(self.canvasElement, self.ctx.canvas.width*0.4, self.ctx.canvas.height*0.677, self.ctx.canvas.width*0.005, self.ctx.canvas.height*0.024);
   self.line8c = new Line(self.canvasElement, self.ctx.canvas.width*0.6, self.ctx.canvas.height*0.677, self.ctx.canvas.width*0.005, self.ctx.canvas.height*0.032);
-  self.line9 = new Line(self.canvasElement, self.ctx.canvas.width*0.4, self.ctx.canvas.height*0.9, self.ctx.canvas.width*0.2,  self.ctx.canvas.height*0.009);
-  // // self.line9b = new Line(self.canvasElement, 128, 114, 3, 6);
-  // // self.line9c = new Line(self.canvasElement, 188, 114, 3, 9);
   // //LINEAS DE LA FILA 3
   self.line10 = new Line(self.canvasElement, self.ctx.canvas.width*0.8, self.ctx.canvas.height*0.04, self.ctx.canvas.width*0.2,  self.ctx.canvas.height*0.009);
-  // self.line10b = new Line(self.canvasElement, 240, 5, 3, 6);
+  self.line10b = new Line(self.canvasElement, self.ctx.canvas.width*0.8, self.ctx.canvas.height*0.04, self.ctx.canvas.width*0.005, self.ctx.canvas.height*0.032);
   self.line11 = new Line(self.canvasElement, self.ctx.canvas.width*0.8, self.ctx.canvas.height*0.3, self.ctx.canvas.width*0.2,  self.ctx.canvas.height*0.009);
-  // self.line11b = new Line(self.canvasElement, 240, 36, 3, 12);
+  self.line11b =  new Line(self.canvasElement, self.ctx.canvas.width*0.8, self.ctx.canvas.height*0.277, self.ctx.canvas.width*0.005, self.ctx.canvas.height*0.05);
   self.line12 = new Line(self.canvasElement, self.ctx.canvas.width*0.8, self.ctx.canvas.height*0.5, self.ctx.canvas.width*0.2,  self.ctx.canvas.height*0.009);
   // self.line12b = new Line(self.canvasElement, 240, 66, 3, 12);
   self.line13 = new Line(self.canvasElement, self.ctx.canvas.width*0.8, self.ctx.canvas.height*0.7, self.ctx.canvas.width*0.2,  self.ctx.canvas.height*0.009);
@@ -224,9 +221,9 @@ Game.prototype._drawAll = function () {
   self.line8b.draw();
   self.line8c.draw();
   self.line10.draw();
-  // self.line10b.draw();
+  self.line10b.draw();
   self.line11.draw();
-  // self.line11b.draw();
+  self.line11b.draw();
   self.line12.draw();
   // self.line12b.draw();
   self.line13.draw();
