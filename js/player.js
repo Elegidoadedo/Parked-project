@@ -17,6 +17,8 @@ Player.prototype.initialimg = function (){
   imgPlayer = new Image;
   imgPlayer.src = src="img/player-rigth.png";
 }
+var soundPlayer = new Audio;
+soundPlayer.src= src=('snd/ruum.mp3');
 
 Player.prototype.setDirection = function (dx, dy) {
   var self = this;

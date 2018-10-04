@@ -41,7 +41,7 @@ Game.prototype._startLoop = function (){
   var self = this;
   self.cars= [];
   
-  self.score = 1500,
+  self.score = 500,
   self._timeDown();
   self.player = new Player(self.canvasElement);
   self.player.initialimg();
@@ -102,7 +102,8 @@ Game.prototype._startLoop = function (){
       self.player.setImpulse(2.5);
       self.player.width = self.ctx.canvas.height*0.09;
       self.player.heigth = self.ctx.canvas.width*0.12;
-      imgPlayer.src = src="img/player-down.png"
+      imgPlayer.src = src="img/player-down.png";
+      soundPlayer.play();
     }
     if (evt.key === "ArrowUp") {
       evt.preventDefault();
@@ -110,7 +111,8 @@ Game.prototype._startLoop = function (){
       self.player.setImpulse(2.5);
       self.player.width = self.ctx.canvas.height*0.09;
       self.player.heigth = self.ctx.canvas.width*0.12;
-      imgPlayer.src = src="img/player-up.png"
+      imgPlayer.src = src="img/player-up.png";
+      soundPlayer.play();
     }
     if (evt.key === "ArrowLeft") {
       evt.preventDefault();
@@ -118,7 +120,8 @@ Game.prototype._startLoop = function (){
       self.player.setImpulse(2.5);
       self.player.width = self.ctx.canvas.width*0.12;
       self.player.heigth =  self.ctx.canvas.height*0.09;
-      imgPlayer.src = src="img/player-left.png"
+      imgPlayer.src = src="img/player-left.png";
+      soundPlayer.play();
     } 
     if (evt.key === "ArrowRight") {
       evt.preventDefault();
@@ -126,7 +129,8 @@ Game.prototype._startLoop = function (){
       self.player.setImpulse(2.5);
       self.player.width = self.ctx.canvas.width*0.12;
       self.player.heigth = self.ctx.canvas.height*0.09;
-      imgPlayer.src = src="img/player-rigth.png"
+      imgPlayer.src = src="img/player-rigth.png";
+      soundPlayer.play();
     }
   }
 
