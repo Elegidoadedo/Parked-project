@@ -47,10 +47,10 @@ Game.prototype._startLoop = function (){
   self.player.initialimg();
   self.obs1 = new Obstacle(self.canvasElement, self.ctx.canvas.width*0.4, self.ctx.canvas.height*0.35, false);
   self.cars.push(self.obs1);
-  self.obs2 = new Obstacle(self.canvasElement, self.ctx.canvas.width*0.025, self.ctx.canvas.height*0.80, false);
+  self.obs2 = new Obstacle(self.canvasElement, self.ctx.canvas.width*0.025, self.ctx.canvas.height*0.75, false);
   self.obs2 .carts = true;
   self.cars.push(self.obs2);
-  self.obs5 = new Obstacle(self.canvasElement, self.ctx.canvas.width*0.4, self.ctx.canvas.height*0.15, false);
+  self.obs5 = new Obstacle(self.canvasElement, self.ctx.canvas.width*0.42, self.ctx.canvas.height*0.15, false);
   self.cars.push(self.obs5);
   self.obs3 = new Obstacle(self.canvasElement, self.ctx.canvas.width*0.025, self.ctx.canvas.height*0.37, false);
   self.cars.push(self.obs3);
@@ -71,11 +71,11 @@ Game.prototype._startLoop = function (){
   self.line4b = new Line(self.canvasElement, self.ctx.canvas.width*0.2, self.ctx.canvas.height*0.885, self.ctx.canvas.width*0.005, self.ctx.canvas.height*0.024);
   // //LINEAS DE LA FILA 2
    self.line5 = new Line(self.canvasElement, self.ctx.canvas.width*0.4, self.ctx.canvas.height*0.1, self.ctx.canvas.width*0.2,  self.ctx.canvas.height*0.009);
-  // self.line5b = new Line(self.canvasElement, 128, 10, 3, 6);
-  // self.line5c = new Line(self.canvasElement, 188, 10, 3, 6);
+  self.line5b = new Line(self.canvasElement, self.ctx.canvas.width*0.4, self.ctx.canvas.height*0.1, self.ctx.canvas.width*0.005, self.ctx.canvas.height*0.024);
+  self.line5c = new Line(self.canvasElement, self.ctx.canvas.width*0.6, self.ctx.canvas.height*0.1, self.ctx.canvas.width*0.005, self.ctx.canvas.height*0.024);
    self.line6 = new Line(self.canvasElement, self.ctx.canvas.width*0.4, self.ctx.canvas.height*0.3, self.ctx.canvas.width*0.2,  self.ctx.canvas.height*0.009);
-  // self.line6b = new Line(self.canvasElement, 128, 32, 3, 12);
-  // self.line6c = new Line(self.canvasElement, 188, 32, 3, 12);
+  self.line6b = new Line(self.canvasElement, self.ctx.canvas.width*0.4, self.ctx.canvas.height*0.277, self.ctx.canvas.width*0.005, self.ctx.canvas.height*0.05);
+  self.line6c = new Line(self.canvasElement, self.ctx.canvas.width*0.6, self.ctx.canvas.height*0.277, self.ctx.canvas.width*0.005, self.ctx.canvas.height*0.05);
   self.line7 = new Line(self.canvasElement, self.ctx.canvas.width*0.4, self.ctx.canvas.height*0.5, self.ctx.canvas.width*0.2,  self.ctx.canvas.height*0.009);
   // self.line7b = new Line(self.canvasElement, 128, 62, 3, 12);
   // self.line7c = new Line(self.canvasElement, 188, 62, 3, 12);
@@ -212,11 +212,11 @@ Game.prototype._drawAll = function () {
   self.line4.draw();
   self.line4b.draw();
   self.line5.draw();
-  // self.line5b.draw();
-  // self.line5c.draw();
+  self.line5b.draw();
+  self.line5c.draw();
   self.line6.draw();
-  // self.line6b.draw();
-  // self.line6c.draw();
+  self.line6b.draw();
+  self.line6c.draw();
   self.line7.draw();
   // self.line7b.draw();
   // self.line7c.draw();
