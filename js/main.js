@@ -80,8 +80,8 @@ function handleGameover () {
        </div>`
        );
        canvas.appendChild(gameOverScreen);
-      //  scoreValue = document.querySelector(".value");
-      //  scoreValue.appendchild(score);
+       var scoreElement = document.querySelector('.value');
+       scoreElement.innerText = score;
        btnRestart = document.querySelector(".btn-restart");
        btnRestart.addEventListener('click', clickRestart);
    };

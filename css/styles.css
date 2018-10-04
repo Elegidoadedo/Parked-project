@@ -32,7 +32,13 @@ body {
   margin: 0 auto;
   position: relative;
 }
-.back-splash{
+.back-gameOver h1{
+  font-size: 87px;
+}
+.back-gameOver h2{
+  font-size: 44px;
+}
+.back-splash,  .back-gameOver{
   background-image: url(../img/background.png);
   background-size: cover;
   display: flex;
@@ -59,7 +65,7 @@ canvas.canvas{
   height: auto;
   margin: 0 auto;
 }
-.btn-start{
+.btn-start, .btn-restart{
 width: 30%;
 margin: 0 auto;
 background-color: black;
